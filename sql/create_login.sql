@@ -1,4 +1,5 @@
 -- 用户表
+drop table bus_user;
 create table bus_user (
     `id` varchar(32) unique NOT NULL comment '主键ID',
     `creator` varchar(32) NULL comment '创建人',
@@ -10,7 +11,7 @@ create table bus_user (
     `mobile` varchar(11) NULL comment '用户电话',
     `email` varchar(100) NULL comment '用户Email',
     `role_id` varchar(32) null comment '角色ID',
-    `department_id` varchar(32) null comment '部门ID',
+    `dept_id` varchar(32) null comment '部门ID',
     `user_code` varchar(32) null comment '用户Code',
     `status` char(1) NOT NULL comment '用户状态；0-生效；1-冻结；2-注销'
-)
+);
