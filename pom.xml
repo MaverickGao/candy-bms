@@ -22,6 +22,8 @@
         <mybatis.version>3.5.6</mybatis.version>
         <druid.version>1.1.21</druid.version>
         <mysql.version>8.0.28</mysql.version>
+        <commons.collection4.version>4.4</commons.collection4.version>
+        <xxljob.version>2.3.0</xxljob.version>
     </properties>
     <dependencies>
         <dependency>
@@ -108,6 +110,24 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <!-- common -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>${commons.collection4.version}</version>
+        </dependency>
+
+        <!-- xxl-job -->
+        <dependency>
+            <groupId>com.xuxueli</groupId>
+            <artifactId>xxl-job-core</artifactId>
+            <version>${xxljob.version}</version>
         </dependency>
     </dependencies>
 
