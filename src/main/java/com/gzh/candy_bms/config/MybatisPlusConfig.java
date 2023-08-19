@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * @author gaozhiheng
  */
 @Configuration
-@MapperScan("com.gzh.candy_bms.mapper")
+@MapperScan("com.gzh.candy_bms.*.mapper")
 public class MybatisPlusConfig {
 
     @Bean

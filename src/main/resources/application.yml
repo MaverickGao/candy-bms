@@ -23,7 +23,7 @@ spring:
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*Mapper.xml
-  type-aliases-package: com.gzh.candy_bms.bean.model
+  type-aliases-package: com.gzh.candy_bms.*.bean.model
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
@@ -34,9 +34,13 @@ xxl:
       addresses: http://124.222.98.20:8017//xxl-job-admin
     accessToken:
     executor:
-      appname: xxl-job-executor
+      appname: xxl-job-executor-candy
       address:
       ip:
       port: -1
       logpath: /data/applogs/xxl-job/jobhandler
       logretentiondays: 30
+
+feishu-app:
+  app-id: cli_a3ddeccbd639100d
+  app-secret: 9POqHSAgtJuOlKNN30uA6gXOkdPAdUYc

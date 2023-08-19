@@ -1,7 +1,8 @@
-package com.gzh.candy_bms.system.dao;
+package com.gzh.candy_bms.system.dao.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.gzh.candy_bms.system.bean.model.BusUserDO;
+import com.gzh.candy_bms.system.dao.BusUserDao;
 import com.gzh.candy_bms.system.mapper.BusUserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;

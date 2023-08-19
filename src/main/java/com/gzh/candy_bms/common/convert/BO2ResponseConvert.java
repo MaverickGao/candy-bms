@@ -10,7 +10,7 @@ import org.mapstruct.factory.Mappers;
  *
  * @author gaozhiheng
  */
-@Mapper
+@Mapper(componentModel = "spring")
 public interface BO2ResponseConvert {
 
     BO2ResponseConvert INSTANCE = Mappers.getMapper(BO2ResponseConvert.class);
