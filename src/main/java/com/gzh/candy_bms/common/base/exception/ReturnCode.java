@@ -20,7 +20,12 @@ public enum ReturnCode implements ReturnCodeAndMsg {
     /**
      * 登录报错信息
      */
-    LOGIN_NO_ACCOUNT_ERROR("20010001", "登录失败：请输入登录账户名")
+    LOGIN_NO_ACCOUNT_ERROR("20010001", "登录失败：请输入登录账户名"),
+
+    /**
+     * 登录报错信息
+     */
+    LOGIN_NO_DATA_ERROR("20010002", "登录失败：未查询到用户信息"),
     ;
 
     private final String code;

@@ -53,6 +53,13 @@ xxl:
       logpath: /data/applogs/xxl-job/jobhandler
       logretentiondays: 30
 
-feishu-app:
+feishu:
   app-id: cli_a3ddeccbd639100d
   app-secret: 9POqHSAgtJuOlKNN30uA6gXOkdPAdUYc
+
+tencent-cloud:
+  video:
+    secret-id: AKIDLl3325cRKD6hMYondHqBRg1fGh293lJd
+    secret-key: OhoiS0MVTElhQ0PajgOuIUisqiQxSl3D
+    sub-app-id: 1300565699
+    storage-region: ap-shanghai

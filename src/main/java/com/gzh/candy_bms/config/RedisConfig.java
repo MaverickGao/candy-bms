@@ -75,5 +75,4 @@ public class RedisConfig {
     IGlobalCache cache(RedisTemplate redisTemplate) {
         return new AppRedisCacheManager(redisTemplate);
     }
-
 }

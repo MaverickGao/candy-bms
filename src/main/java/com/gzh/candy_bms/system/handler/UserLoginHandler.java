@@ -37,11 +37,26 @@ public class UserLoginHandler {
         // 查询当前用户是否存在于生效系统用户内
         BusUserDO busUserDO = busUserLogic.queryNormalUserInfoByName(account);
         if (Objects.isNull(busUserDO)) {
-            // 查看飞书用户信息是否存在，如果存在创建用户
+            // todo 查看飞书用户信息是否存在，如果存在创建用户
 
+            // 创建完成以后，重新查询用户信息
+            busUserDO = busUserLogic.queryNormalUserInfoByName(account);
         }
+        // 根据用户信息组装页面返回信息
+
+        // 缓存用户信息
 
         return null;
+    }
+
+    private UserLoginBO buildUserLoginBO(BusUserDO busUserDO) {
+        if (Objects.isNull(busUserDO)) {
+            log.error("登录失败，未查询到用户信息！");
+            throw new BusinessException(ReturnCode.LOGIN_NO_ACCOUNT_ERROR);
+        }
+        UserLoginBO result = new UserLoginBO();
+        // 查询部门表信息
+        return result;
     }
 
     /**
