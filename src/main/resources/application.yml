@@ -1,4 +1,8 @@
 spring:
+  servlet:
+    multipart:
+      max-file-size: 2GB
+      max-request-size: 2GB
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://124.222.98.20:3306/gaozhiheng
@@ -63,3 +67,5 @@ tencent-cloud:
     secret-key: OhoiS0MVTElhQ0PajgOuIUisqiQxSl3D
     sub-app-id: 1300565699
     storage-region: ap-shanghai
+    video-local-storage-path: /static/tencent/video/
+    cover-local-storage-path: /static/tencent/cover/

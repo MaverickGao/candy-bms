@@ -1,4 +1,4 @@
-package com.gzh.candy_bms.common.tencentcloud;
+package com.gzh.candy_bms.tencentcloud;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  */
 @Data
 @Component
-public class TencentCloudVideoProperties {
+public class TencentCloudProperties {
 
     /**
      * 云点播 密钥ID
@@ -36,4 +36,16 @@ public class TencentCloudVideoProperties {
      */
     @Value("${tencent-cloud.video.storage-region}")
     private String tencentCloudVideoStorageRegion;
+
+    /**
+     * 云点播 本地视频存储路径
+     */
+    @Value("${tencent-cloud.video.video-local-storage-path}")
+    private String tencentCloudVideoStoragePath;
+
+    /**
+     * 云点播 本地视频封面文件存储路径
+     */
+    @Value("${tencent-cloud.video.cover-local-storage-path}")
+    private String tencentCloudCoverStoragePath;
 }

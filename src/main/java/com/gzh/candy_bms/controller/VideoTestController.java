@@ -1,19 +1,14 @@
 package com.gzh.candy_bms.controller;
 
-import org.apache.tomcat.util.http.fileupload.IOUtils;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
+import com.gzh.candy_bms.tencentcloud.TencentCloudVideoHelper;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
 
 /**
  * 视频播放调研
@@ -23,31 +18,23 @@ import java.io.OutputStream;
 @RestController
 public class VideoTestController {
 
+    @Resource
+    private TencentCloudVideoHelper tencentCloudVideoHelper;
+
     /**
      * 视频样例文件地址
      */
     private final static String FILE_PATH = "";
 
     /**
-     * 使用I/O流播放视频
+     * 上传文件测试
      *
-     * @param request {@link HttpServletRequest}
-     * @param response {@link HttpServletResponse}
+     * @param file     待上传文件
+     * @param request  /
+     * @param response /
      */
-    @GetMapping("/video/test/play-video-with-io-stream")
-    @ResponseBody
-    public void playVideoWithIOStream(HttpServletRequest request, HttpServletResponse response) {
-        try {
-            File file = new File("F:/Foundation_S02E01.mp4");
-            response.setContentType(MediaType.APPLICATION_OCTET_STREAM_VALUE);
-            response.setHeader("Content-Disposition", "attachment; filename="+file.getName().replace(" ", "_"));
-            InputStream iStream = new FileInputStream(file);
-            IOUtils.copy(iStream, response.getOutputStream());
-            response.flushBuffer();
-        } catch (java.nio.file.NoSuchFileException e) {
-            response.setStatus(HttpStatus.NOT_FOUND.value());
-        } catch (Exception e) {
-            response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
-        }
+    @PostMapping("/video/test/upload-video-file")
+    public void playVideoWithIOStream(@RequestPart("file") MultipartFile file, HttpServletRequest request, HttpServletResponse response) {
+        tencentCloudVideoHelper.upload(file);
     }
 }

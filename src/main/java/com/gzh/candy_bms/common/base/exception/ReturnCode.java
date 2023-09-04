@@ -26,6 +26,21 @@ public enum ReturnCode implements ReturnCodeAndMsg {
      * 登录报错信息
      */
     LOGIN_NO_DATA_ERROR("20010002", "登录失败：未查询到用户信息"),
+
+    /**
+     * 腾讯云点播文件上传失败，文件存储到本地失败
+     */
+    TENCENT_VIDEO_STORAGE_TO_LOCAL_ERROR("30010001", "腾讯云点播文件上传失败，文件存储到本地失败"),
+
+    /**
+     * 腾讯云点播文件上传失败，文件存储到本地失败，未传入文件名
+     */
+    TENCENT_VIDEO_STORAGE_NO_FILENAME_ERROR("30010002", "腾讯云点播文件上传失败，文件存储到本地失败，未传入文件名"),
+
+    /**
+     * 腾讯云点播文件上传失败
+     */
+    TENCENT_VIDEO_ERROR("30010003", "腾讯云点播文件上传失败"),
     ;
 
     private final String code;
