@@ -1,4 +1,4 @@
-package com.gzh.candy_bms.common.feishu;
+package com.gzh.candy_bms.feishu;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
