@@ -5,5 +5,5 @@ package com.gzh.candy_bms.feishu;
  *
  * @author gaozhiheng
  */
-public interface FeishuBaseServer {
+public interface BaseServer {
 }

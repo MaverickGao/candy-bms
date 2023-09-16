@@ -10,7 +10,7 @@ import javax.annotation.Resource;
  *
  * @author gaozhiheng
  */
-public abstract class FeishuBaseAbstractServer implements FeishuBaseServer {
+public abstract class BaseAbstractServer implements BaseServer {
 
     protected final Logger log = LoggerFactory.getLogger(getClass());
 
