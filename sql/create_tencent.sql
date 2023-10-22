@@ -10,6 +10,6 @@ create table tencent_video_storage_history (
     `file_name` varchar(20) NOT NULL comment '文件名称',
     `tencent_file_id` varchar(20) NULL comment '腾讯云文件ID',
     `media_url` varchar(500) NULL comment '视频url',
-    `upload_status` char(1) NOT NULL comment '上传状态；0-上传中；1-上传成功；2-上传失败'
-);
-
+    `upload_status` char(1) NOT NULL comment '上传状态；0-上传中；1-上传成功；2-上传失败',
+    PRIMARY KEY(`id`)
+) COMMENT = '腾讯云点播上传历史表';

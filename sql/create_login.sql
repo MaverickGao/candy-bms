@@ -13,5 +13,6 @@ create table bus_user (
     `role_id` varchar(32) null comment '角色ID',
     `dept_id` varchar(32) null comment '部门ID',
     `user_code` varchar(32) null comment '用户Code',
-    `status` char(1) NOT NULL comment '用户状态；0-生效；1-冻结；2-注销'
-);
+    `status` char(1) NOT NULL comment '用户状态；0-生效；1-冻结；2-注销',
+    PRIMARY KEY(`id`)
+) COMMENT = '用户表';
