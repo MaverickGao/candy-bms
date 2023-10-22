@@ -58,4 +58,16 @@ public class BalanceSheetRecordDO extends BaseModel implements Serializable {
      */
     @TableField("balance_describe")
     private String balanceDescribe;
+
+    /**
+     * 支出评价；0-好支出；1-坏支出；2-必须支出
+     */
+    @TableField("expenses_evaluation")
+    private String expensesEvaluation;
+
+    /**
+     * 坏支出原因
+     */
+    @TableField("bad_expenses_reason")
+    private String badExpensesReason;
 }

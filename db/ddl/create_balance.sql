@@ -44,5 +44,7 @@ create table balance_sheet_record (
     `subsidiary_type_id` varchar(32) NULL comment '收支细分类别ID',
     `general_type_id` varchar(32) NULL comment '收支总类别ID',
     `balance_describe` varchar(100) NULL comment '收支描述',
+    `expenses_evaluation` char(1) NULL DEFAULT 0 comment '支出评价；0-好支出；1-坏支出；2-必须支出',
+    `bad_expenses_reason` varchar(100) NULL comment '坏支出原因',
     PRIMARY KEY(`id`)
 ) COMMENT = '收支记录表';
