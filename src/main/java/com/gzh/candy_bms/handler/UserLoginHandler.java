@@ -1,4 +1,4 @@
-package com.gzh.candy_bms.system.handler;
+package com.gzh.candy_bms.handler;
 
 import com.gzh.candy_bms.common.base.exception.BusinessException;
 import com.gzh.candy_bms.common.base.exception.ReturnCode;

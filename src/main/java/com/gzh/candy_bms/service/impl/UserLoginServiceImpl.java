@@ -3,7 +3,7 @@ package com.gzh.candy_bms.service.impl;
 import com.gzh.candy_bms.common.convert.BO2ResponseConvert;
 import com.gzh.candy_bms.pojo.response.UserLoginResponse;
 import com.gzh.candy_bms.service.UserLoginService;
-import com.gzh.candy_bms.system.handler.UserLoginHandler;
+import com.gzh.candy_bms.handler.UserLoginHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
