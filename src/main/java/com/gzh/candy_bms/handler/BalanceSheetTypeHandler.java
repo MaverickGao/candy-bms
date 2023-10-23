@@ -3,7 +3,9 @@ package com.gzh.candy_bms.handler;
 import com.gzh.candy_bms.common.base.exception.BusinessException;
 import com.gzh.candy_bms.common.base.exception.ReturnCode;
 import com.gzh.candy_bms.common.convert.BO2DOConvert;
+import com.gzh.candy_bms.common.convert.DO2BOConvert;
 import com.gzh.candy_bms.record.bean.bo.BalanceSheetGeneralTypeBO;
+import com.gzh.candy_bms.record.bean.bo.QueryGeneralTypeBO;
 import com.gzh.candy_bms.record.bean.model.BalanceSheetGeneralTypeDO;
 import com.gzh.candy_bms.record.logic.BalanceSheetGeneralTypeLogic;
 import com.gzh.candy_bms.record.logic.BalanceSheetSubsidiaryTypeLogic;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -32,6 +35,9 @@ public class BalanceSheetTypeHandler {
 
     @Resource
     private BO2DOConvert bo2DOConvert;
+
+    @Resource
+    private DO2BOConvert do2BOConvert;
 
     /**
      * 新增加一条 收支总类别 数据
@@ -64,5 +70,18 @@ public class BalanceSheetTypeHandler {
             log.warn("新增收支总类别数据失败，{}总类别已存在", generalTypeDO.getTypeName());
             throw new BusinessException(ReturnCode.INSERT_GENERAL_TYPE_ERROR);
         }
+    }
+
+    /**
+     * 根据 收支总类别名称 查询 收支总类别列表
+     *
+     * @param generalTypeName 收支总类别名称
+     * @param balanceType     收支标志
+     * @return 收支总类别列表
+     */
+    public List<QueryGeneralTypeBO> queryGeneralTypeList(String generalTypeName, String balanceType) {
+        return do2BOConvert.balanceSheetGeneralTypeDOQueryGeneralTypeBOList(
+                balanceSheetGeneralTypeLogic.queryBalanceSheetGeneralTypeDOInfo(generalTypeName, balanceType)
+        );
     }
 }

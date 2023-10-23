@@ -8,6 +8,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -66,6 +67,23 @@ public class BalanceSheetGeneralTypeLogic {
                         .eq(BalanceSheetGeneralTypeDO::getTypeName, typeName)
                         .eq(BalanceSheetGeneralTypeDO::getDeleteFlag, DeleteFlagEnum.UN_DELETED.getCode())
                         .last("limit 1")
+        );
+    }
+
+    /**
+     * 查询 收支总类别 数据列表
+     *
+     * @param typeName    收支总类别名称
+     * @param balanceType 收支标志
+     * @return 收支总类别 数据列表
+     */
+    public List<BalanceSheetGeneralTypeDO> queryBalanceSheetGeneralTypeDOInfo(String typeName, String balanceType) {
+        return balanceSheetGeneralTypeDao.list(
+                Wrappers.<BalanceSheetGeneralTypeDO>lambdaQuery()
+                        .like(StringUtils.isNotBlank(typeName), BalanceSheetGeneralTypeDO::getTypeName, typeName)
+                        .eq(BalanceSheetGeneralTypeDO::getBalanceType, balanceType)
+                        .eq(BalanceSheetGeneralTypeDO::getDeleteFlag, DeleteFlagEnum.UN_DELETED.getCode())
+                        .orderByAsc(BalanceSheetGeneralTypeDO::getLastModifyTime)
         );
     }
 }
