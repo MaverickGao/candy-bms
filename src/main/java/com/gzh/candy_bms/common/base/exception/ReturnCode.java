@@ -41,6 +41,11 @@ public enum ReturnCode implements ReturnCodeAndMsg {
      * 腾讯云点播文件上传失败
      */
     TENCENT_VIDEO_ERROR("30010003", "腾讯云点播文件上传失败"),
+
+    /**
+     * 新增收支总类别数据失败
+     */
+    INSERT_GENERAL_TYPE_ERROR("40010001", "新增收支总类别数据失败")
     ;
 
     private final String code;

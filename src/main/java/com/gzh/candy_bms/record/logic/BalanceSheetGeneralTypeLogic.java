@@ -50,4 +50,22 @@ public class BalanceSheetGeneralTypeLogic {
                         .last("limit 1")
         );
     }
+
+    /**
+     * 根据 收支总类型名称 查询 收支总类别 数据
+     *
+     * @param typeName 收支总类型名称
+     * @return 收支总类别 数据
+     */
+    public BalanceSheetGeneralTypeDO queryGeneralTypeByName(String typeName) {
+        if (StringUtils.isBlank(typeName)) {
+            return null;
+        }
+        return balanceSheetGeneralTypeDao.getOne(
+                Wrappers.<BalanceSheetGeneralTypeDO>lambdaQuery()
+                        .eq(BalanceSheetGeneralTypeDO::getTypeName, typeName)
+                        .eq(BalanceSheetGeneralTypeDO::getDeleteFlag, DeleteFlagEnum.UN_DELETED.getCode())
+                        .last("limit 1")
+        );
+    }
 }

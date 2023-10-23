@@ -8,9 +8,8 @@ import org.mapstruct.factory.Mappers;
  *
  * @author gaozhiheng
  */
-@Mapper
+@Mapper(componentModel = "spring")
 public interface DO2BOConvert {
 
     DO2BOConvert INSTANCE = Mappers.getMapper(DO2BOConvert.class);
-
 }
