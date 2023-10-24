@@ -1,7 +1,9 @@
 package com.gzh.candy_bms.common.convert;
 
 import com.gzh.candy_bms.pojo.request.InsertGeneralTypeRequest;
+import com.gzh.candy_bms.pojo.request.InsertSubsidiaryTypeRequest;
 import com.gzh.candy_bms.record.bean.bo.BalanceSheetGeneralTypeBO;
+import com.gzh.candy_bms.record.bean.bo.BalanceSheetSubsidiaryTypeBO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -22,4 +24,12 @@ public interface Request2BOConvert {
      * @return {@link BalanceSheetGeneralTypeBO}
      */
     BalanceSheetGeneralTypeBO balanceSheetGeneralTypeRequest2BO(InsertGeneralTypeRequest request);
+
+    /**
+     * InsertSubsidiaryType Request 转 BO
+     *
+     * @param request {@link InsertSubsidiaryTypeRequest}
+     * @return {@link BalanceSheetSubsidiaryTypeBO}
+     */
+    BalanceSheetSubsidiaryTypeBO balanceSheetSubsidiaryTypeRequest2BO(InsertSubsidiaryTypeRequest request);
 }

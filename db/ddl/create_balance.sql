@@ -22,7 +22,7 @@ create table balance_sheet_subsidiary_type (
     `modifier` varchar(32) NULL comment '修改人',
     `last_modify_time` varchar(14) NULL comment '最后修改时间',
     `delete_flag` char(1) NULL DEFAULT 0 comment '生效状态；0-生效；1-失效',
-    `general_type_id` varchar(32) NOT NULL comment '总类别名称',
+    `general_type_id` varchar(32) NOT NULL comment '总类别ID',
     `type_name` varchar(20) NOT NULL comment '明细类别名称',
     `balance_type` char(1) NULL DEFAULT 0 comment '收支标志；0-收入；1-支出',
     `subsidiary_type_describe` varchar(100) NULL comment '明细类别描述',

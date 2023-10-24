@@ -83,7 +83,7 @@ public class BalanceSheetGeneralTypeLogic {
                         .like(StringUtils.isNotBlank(typeName), BalanceSheetGeneralTypeDO::getTypeName, typeName)
                         .eq(BalanceSheetGeneralTypeDO::getBalanceType, balanceType)
                         .eq(BalanceSheetGeneralTypeDO::getDeleteFlag, DeleteFlagEnum.UN_DELETED.getCode())
-                        .orderByAsc(BalanceSheetGeneralTypeDO::getLastModifyTime)
+                        .orderByAsc(BalanceSheetGeneralTypeDO::getTypeName)
         );
     }
 }

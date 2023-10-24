@@ -56,10 +56,12 @@ public class BalanceSheetSubsidiaryTypeLogic {
     /**
      * 根据 收支总类别ID 查询 收支细分类别 数据列表
      *
-     * @param generalId 收支总类别ID
+     * @param generalId   收支总类别ID
+     * @param typeName    收支细分类别名称
+     * @param balanceType 收支标志
      * @return 收支细分类别 数据列表
      */
-    public List<BalanceSheetSubsidiaryTypeDO> querySubsidiaryTypeListByGeneralId(String generalId) {
+    public List<BalanceSheetSubsidiaryTypeDO> querySubsidiaryTypeListByGeneralId(String generalId, String typeName, String balanceType) {
         if (StringUtils.isBlank(generalId)) {
             return Lists.newArrayList();
         }
@@ -67,7 +69,27 @@ public class BalanceSheetSubsidiaryTypeLogic {
                 Wrappers.<BalanceSheetSubsidiaryTypeDO>lambdaQuery()
                         .eq(BalanceSheetSubsidiaryTypeDO::getDeleteFlag, DeleteFlagEnum.UN_DELETED.getCode())
                         .eq(BalanceSheetSubsidiaryTypeDO::getGeneralTypeId, generalId)
+                        .eq(BalanceSheetSubsidiaryTypeDO::getBalanceType, balanceType)
+                        .like(StringUtils.isNotBlank(typeName), BalanceSheetSubsidiaryTypeDO::getTypeName, typeName)
                         .orderByAsc(BalanceSheetSubsidiaryTypeDO::getTypeName)
+        );
+    }
+
+    /**
+     * 根据 细分类别名称 查询 收支细分类别 数据
+     *
+     * @param typeName 细分类别名称
+     * @return 收支细分类别 数据
+     */
+    public BalanceSheetSubsidiaryTypeDO querySubsidiaryTypeByName(String typeName) {
+        if (StringUtils.isBlank(typeName)) {
+            return null;
+        }
+        return balanceSheetSubsidiaryTypeDao.getOne(
+                Wrappers.<BalanceSheetSubsidiaryTypeDO>lambdaQuery()
+                        .eq(BalanceSheetSubsidiaryTypeDO::getDeleteFlag, DeleteFlagEnum.UN_DELETED.getCode())
+                        .eq(BalanceSheetSubsidiaryTypeDO::getTypeName, typeName)
+                        .last("limit 1")
         );
     }
 }

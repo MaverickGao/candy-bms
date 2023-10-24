@@ -1,7 +1,9 @@
 package com.gzh.candy_bms.common.convert;
 
 import com.gzh.candy_bms.record.bean.bo.QueryGeneralTypeBO;
+import com.gzh.candy_bms.record.bean.bo.QuerySubsidiaryTypeBO;
 import com.gzh.candy_bms.record.bean.model.BalanceSheetGeneralTypeDO;
+import com.gzh.candy_bms.record.bean.model.BalanceSheetSubsidiaryTypeDO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
@@ -26,7 +28,7 @@ public interface DO2BOConvert {
      */
     @Mapping(target = "generalTypeId", source = "id")
     @Mapping(target = "generalTypeName", source = "typeName")
-    QueryGeneralTypeBO balanceSheetGeneralTypeDOQueryGeneralTypeBO(BalanceSheetGeneralTypeDO balanceSheetGeneralTypeDO);
+    QueryGeneralTypeBO balanceSheetGeneralTypeDO2QueryGeneralTypeBO(BalanceSheetGeneralTypeDO balanceSheetGeneralTypeDO);
 
 
     /**
@@ -35,5 +37,25 @@ public interface DO2BOConvert {
      * @param list {@link List<BalanceSheetGeneralTypeDO> }
      * @return {@link List<QueryGeneralTypeBO>}
      */
-    List<QueryGeneralTypeBO> balanceSheetGeneralTypeDOQueryGeneralTypeBOList(List<BalanceSheetGeneralTypeDO> list);
+    List<QueryGeneralTypeBO> balanceSheetGeneralTypeDO2QueryGeneralTypeBOList(List<BalanceSheetGeneralTypeDO> list);
+
+    /**
+     * BalanceSheetSubsidiaryTypeDO 2 QuerySubsidiaryTypeBO
+     *
+     * @param balanceSheetSubsidiaryTypeDO {@link BalanceSheetSubsidiaryTypeDO}
+     * @return {@link QuerySubsidiaryTypeBO}
+     */
+    @Mapping(target = "generalTypeId", source = "generalTypeId")
+    @Mapping(target = "subsidiaryTypeId", source = "id")
+    @Mapping(target = "subsidiaryTypeName", source = "typeName")
+    QuerySubsidiaryTypeBO balanceSheetSubsidiaryTypeDO2QuerySubsidiaryTypeBO(BalanceSheetSubsidiaryTypeDO balanceSheetSubsidiaryTypeDO);
+
+
+    /**
+     * BalanceSheetSubsidiaryTypeDO 2 QuerySubsidiaryTypeBO List
+     *
+     * @param list {@link List<BalanceSheetSubsidiaryTypeDO>}
+     * @return {@link List<QuerySubsidiaryTypeBO>}
+     */
+    List<QuerySubsidiaryTypeBO> balanceSheetSubsidiaryTypeDO2QuerySubsidiaryTypeBOList(List<BalanceSheetSubsidiaryTypeDO> list);
 }
