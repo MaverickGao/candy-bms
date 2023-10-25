@@ -56,13 +56,13 @@ public class InsertBalanceSheetRecordRequest implements Serializable {
     /**
      * 收支金额
      */
-    @NotBlank(message = "请输入收支金额")
+    @NotNull(message = "请输入收支金额")
     private BigDecimal balanceAmount;
 
     /**
      * 收支描述
      */
-    @NotNull(message = "请输入收支描述")
+    @NotBlank(message = "请输入收支描述")
     private String balanceDescribe;
 
     /**
