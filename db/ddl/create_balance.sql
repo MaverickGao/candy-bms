@@ -41,9 +41,10 @@ create table balance_sheet_record (
     `record_date` varchar(10) NOT NULL comment '记录日期',
     `balance_type` char(1) NULL DEFAULT 0 comment '收支标志；0-收入；1-支出',
     `subsidiary_balance_type` char(1) NULL DEFAULT 0 comment '收支细分标志；0-固定收入；1-额外收入；2-固定支出；3-额外支出',
-    `subsidiary_type_id` varchar(32) NULL comment '收支细分类别ID',
-    `general_type_id` varchar(32) NULL comment '收支总类别ID',
-    `balance_describe` varchar(100) NULL comment '收支描述',
+    `subsidiary_type_id` varchar(32) NOT NULL comment '收支细分类别ID',
+    `general_type_id` varchar(32) NOT NULL comment '收支总类别ID',
+    `balance_amount` decimal(20,2) NOT NULL comment '收支金额',
+    `balance_describe` varchar(100) NOT NULL comment '收支描述',
     `expenses_evaluation` char(1) NULL DEFAULT 0 comment '支出评价；0-好支出；1-坏支出；2-必须支出',
     `bad_expenses_reason` varchar(100) NULL comment '坏支出原因',
     PRIMARY KEY(`id`)

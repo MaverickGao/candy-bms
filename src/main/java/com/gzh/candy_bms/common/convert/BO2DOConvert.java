@@ -2,7 +2,9 @@ package com.gzh.candy_bms.common.convert;
 
 import com.gzh.candy_bms.record.bean.bo.BalanceSheetGeneralTypeBO;
 import com.gzh.candy_bms.record.bean.bo.BalanceSheetSubsidiaryTypeBO;
+import com.gzh.candy_bms.record.bean.bo.InsertBalanceSheetRecordBO;
 import com.gzh.candy_bms.record.bean.model.BalanceSheetGeneralTypeDO;
+import com.gzh.candy_bms.record.bean.model.BalanceSheetRecordDO;
 import com.gzh.candy_bms.record.bean.model.BalanceSheetSubsidiaryTypeDO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
@@ -32,4 +34,12 @@ public interface BO2DOConvert {
      * @return {@link BalanceSheetSubsidiaryTypeDO}
      */
     BalanceSheetSubsidiaryTypeDO balanceSheetSubsidiaryTypeBO2DO(BalanceSheetSubsidiaryTypeBO balanceSheetSubsidiaryTypeBO);
+
+    /**
+     * InsertBalanceSheetRecordBO BO 转 DO
+     *
+     * @param balanceSheetRecordBO {@link InsertBalanceSheetRecordBO}
+     * @return {@link BalanceSheetRecordDO}
+     */
+    BalanceSheetRecordDO balanceSheetRecordBO2DO(InsertBalanceSheetRecordBO balanceSheetRecordBO);
 }
