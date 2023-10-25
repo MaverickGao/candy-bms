@@ -30,7 +30,7 @@ public class BalanceSheetRecordController {
      * @param request {@link InsertBalanceSheetRecordRequest}
      * @return 插入结果
      */
-    @PostMapping("/balance-sheet/general-type/query-subsidiary-type-list")
+    @PostMapping("/balance-sheet/general-type/insert-balance-sheet-record-info")
     public Result<Void> insertBalanceSheetRecordInfo(@RequestBody @Validated InsertBalanceSheetRecordRequest request) {
         balanceSheetRecordService.insertBalanceSheetRecordInfo(request);
         return Result.success();
