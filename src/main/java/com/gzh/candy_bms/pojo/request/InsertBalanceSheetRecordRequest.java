@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -61,7 +62,7 @@ public class InsertBalanceSheetRecordRequest implements Serializable {
     /**
      * 收支描述
      */
-    @NotBlank(message = "请输入收支描述")
+    @NotNull(message = "请输入收支描述")
     private String balanceDescribe;
 
     /**
