@@ -87,6 +87,7 @@ public class BalanceSheetRecordLogic {
                                 .eq(StringUtils.isNotBlank(request.getSubsidiaryTypeId()), BalanceSheetRecordDO::getSubsidiaryTypeId, request.getSubsidiaryTypeId())
                                 .eq(StringUtils.isNotBlank(request.getExpensesEvaluation()), BalanceSheetRecordDO::getExpensesEvaluation, request.getExpensesEvaluation())
                                 .eq(BalanceSheetRecordDO::getDeleteFlag, DeleteFlagEnum.UN_DELETED.getCode())
+                                .orderByDesc(BalanceSheetRecordDO::getRecordDate)
                                 .orderByDesc(BalanceSheetRecordDO::getLastModifyTime)
                                 .orderByAsc(BalanceSheetRecordDO::getId)
                 ));
