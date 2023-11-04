@@ -1,8 +1,11 @@
 package com.gzh.candy_bms.common.convert;
 
+import com.gzh.candy_bms.common.base.PageResponse;
+import com.gzh.candy_bms.record.bean.bo.QueryBalanceSheetRecordPageBO;
 import com.gzh.candy_bms.record.bean.bo.QueryGeneralTypeBO;
 import com.gzh.candy_bms.record.bean.bo.QuerySubsidiaryTypeBO;
 import com.gzh.candy_bms.record.bean.model.BalanceSheetGeneralTypeDO;
+import com.gzh.candy_bms.record.bean.model.BalanceSheetRecordDO;
 import com.gzh.candy_bms.record.bean.model.BalanceSheetSubsidiaryTypeDO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -50,7 +53,6 @@ public interface DO2BOConvert {
     @Mapping(target = "subsidiaryTypeName", source = "typeName")
     QuerySubsidiaryTypeBO balanceSheetSubsidiaryTypeDO2QuerySubsidiaryTypeBO(BalanceSheetSubsidiaryTypeDO balanceSheetSubsidiaryTypeDO);
 
-
     /**
      * BalanceSheetSubsidiaryTypeDO 2 QuerySubsidiaryTypeBO List
      *
@@ -58,4 +60,20 @@ public interface DO2BOConvert {
      * @return {@link List<QuerySubsidiaryTypeBO>}
      */
     List<QuerySubsidiaryTypeBO> balanceSheetSubsidiaryTypeDO2QuerySubsidiaryTypeBOList(List<BalanceSheetSubsidiaryTypeDO> list);
+
+    /**
+     * BalanceSheetRecord DO 2 pageBO
+     *
+     * @param balanceSheetRecordDO {@link BalanceSheetRecordDO}
+     * @return {@link QueryBalanceSheetRecordPageBO}
+     */
+    QueryBalanceSheetRecordPageBO balanceSheetRecordDO2PageBO(BalanceSheetRecordDO balanceSheetRecordDO);
+
+    /**
+     * BalanceSheetRecord DO 2 pageBO Page
+     *
+     * @param page {@link PageResponse<BalanceSheetRecordDO>}
+     * @return {@link PageResponse<QueryBalanceSheetRecordPageBO>}
+     */
+    PageResponse<QueryBalanceSheetRecordPageBO> balanceSheetRecordDO2PageBOPage(PageResponse<BalanceSheetRecordDO> page);
 }

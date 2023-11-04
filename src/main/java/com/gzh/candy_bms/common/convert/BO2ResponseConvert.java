@@ -1,8 +1,11 @@
 package com.gzh.candy_bms.common.convert;
 
+import com.gzh.candy_bms.common.base.PageResponse;
+import com.gzh.candy_bms.pojo.response.QueryBalanceSheetRecordPageResponse;
 import com.gzh.candy_bms.pojo.response.QueryGeneralTypeResponse;
 import com.gzh.candy_bms.pojo.response.QuerySubsidiaryTypeResponse;
 import com.gzh.candy_bms.pojo.response.UserLoginResponse;
+import com.gzh.candy_bms.record.bean.bo.QueryBalanceSheetRecordPageBO;
 import com.gzh.candy_bms.record.bean.bo.QueryGeneralTypeBO;
 import com.gzh.candy_bms.record.bean.bo.QuerySubsidiaryTypeBO;
 import com.gzh.candy_bms.system.bean.bo.UserLoginBO;
@@ -60,4 +63,20 @@ public interface BO2ResponseConvert {
      * @return {@link List<QuerySubsidiaryTypeResponse>}
      */
     List<QuerySubsidiaryTypeResponse> querySubsidiaryTypeBO2ResponseList(List<QuerySubsidiaryTypeBO> list);
+
+    /**
+     * QueryBalanceSheetRecordPage BO 2 Response
+     *
+     * @param queryBalanceSheetRecordPageBO {@link QueryBalanceSheetRecordPageBO}
+     * @return {@link QueryBalanceSheetRecordPageResponse}
+     */
+    QueryBalanceSheetRecordPageResponse queryBalanceSheetRecordPageBO2Response(QueryBalanceSheetRecordPageBO queryBalanceSheetRecordPageBO);
+
+    /**
+     * QueryBalanceSheetRecordPage BO 2 Response Page
+     *
+     * @param pageResponse {@link PageResponse<QueryBalanceSheetRecordPageBO>}
+     * @return {@link PageResponse<QueryBalanceSheetRecordPageResponse>}
+     */
+    PageResponse<QueryBalanceSheetRecordPageResponse> queryBalanceSheetRecordPageBO2ResponsePage(PageResponse<QueryBalanceSheetRecordPageBO> pageResponse);
 }

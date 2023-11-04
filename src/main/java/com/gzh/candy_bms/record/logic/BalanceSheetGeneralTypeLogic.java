@@ -1,14 +1,18 @@
 package com.gzh.candy_bms.record.logic;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.google.common.collect.Maps;
 import com.gzh.candy_bms.common.enums.DeleteFlagEnum;
 import com.gzh.candy_bms.record.bean.model.BalanceSheetGeneralTypeDO;
 import com.gzh.candy_bms.record.dao.BalanceSheetGeneralTypeDao;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -85,5 +89,30 @@ public class BalanceSheetGeneralTypeLogic {
                         .eq(BalanceSheetGeneralTypeDO::getDeleteFlag, DeleteFlagEnum.UN_DELETED.getCode())
                         .orderByAsc(BalanceSheetGeneralTypeDO::getTypeName)
         );
+    }
+
+    /**
+     * 查询 总类别 词典
+     *
+     * @param idList 总类别ID列表
+     * @return 总类别 词典
+     */
+    public Map<String, String> queryGeneralTypeMap(List<String> idList) {
+        if (CollectionUtils.isEmpty(idList)) {
+            return Maps.newHashMap();
+        }
+        List<BalanceSheetGeneralTypeDO> list = balanceSheetGeneralTypeDao.list(
+                Wrappers.<BalanceSheetGeneralTypeDO>lambdaQuery()
+                        .in(BalanceSheetGeneralTypeDO::getId, idList)
+                        .eq(BalanceSheetGeneralTypeDO::getDeleteFlag, DeleteFlagEnum.UN_DELETED.getCode())
+                        .orderByAsc(BalanceSheetGeneralTypeDO::getTypeName)
+        );
+        if (CollectionUtils.isEmpty(list)) {
+            return Maps.newHashMap();
+        }
+        return list.stream()
+                .filter(e -> Objects.nonNull(e) && StringUtils.isNotBlank(e.getId()) && StringUtils.isNotBlank(e.getTypeName()))
+                .collect(HashMap::new, (map, item) ->
+                        map.put(item.getId(), item.getTypeName()), HashMap::putAll);
     }
 }

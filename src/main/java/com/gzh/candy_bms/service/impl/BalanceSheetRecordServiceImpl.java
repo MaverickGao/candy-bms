@@ -1,6 +1,7 @@
 package com.gzh.candy_bms.service.impl;
 
 import com.gzh.candy_bms.common.base.PageResponse;
+import com.gzh.candy_bms.common.convert.BO2ResponseConvert;
 import com.gzh.candy_bms.common.convert.Request2BOConvert;
 import com.gzh.candy_bms.handler.BalanceSheetRecordHandler;
 import com.gzh.candy_bms.pojo.request.InsertBalanceSheetRecordRequest;
@@ -27,6 +28,9 @@ public class BalanceSheetRecordServiceImpl implements BalanceSheetRecordService 
     @Resource
     private Request2BOConvert request2BOConvert;
 
+    @Resource
+    private BO2ResponseConvert bo2ResponseConvert;
+
     /**
      * 插入一条 收支记录 数据
      *
@@ -47,7 +51,9 @@ public class BalanceSheetRecordServiceImpl implements BalanceSheetRecordService 
      */
     @Override
     public PageResponse<QueryBalanceSheetRecordPageResponse> queryBalanceSheetRecordPage(QueryBalanceSheetRecordPageRequest request) {
-        return null;
+        return bo2ResponseConvert.queryBalanceSheetRecordPageBO2ResponsePage(
+                balanceSheetRecordHandler.queryBalanceSheetRecordPage(request)
+        );
     }
 
     /**
