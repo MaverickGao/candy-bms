@@ -35,6 +35,7 @@ public class MyMetaObjectConfig implements MetaObjectHandler {
 
     @Override
     public void updateFill(MetaObject metaObject) {
+        this.strictUpdateFill(metaObject, "modifier", String.class, SYSTEM);
         this.strictUpdateFill(metaObject, "lastModifyTime", String.class, LocalDateTime.now().format(
                 DateTimeFormatter.ofPattern(DATE_TIME_TO_STRING)));
     }

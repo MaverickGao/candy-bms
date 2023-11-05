@@ -32,7 +32,7 @@ public class UserLoginServiceImpl implements UserLoginService {
      */
     @Override
     public UserLoginResponse login(String account) {
-        return bo2ResponseConvert.UserLoginBO2Response(
+        return bo2ResponseConvert.userLoginBO2Response(
                 userLoginHandler.login(account)
         );
     }
