@@ -39,7 +39,7 @@ public class BaseModel {
     /**
      * 修改人
      */
-    @TableField(value = "modifier", fill = FieldFill.INSERT)
+    @TableField(value = "modifier", fill = FieldFill.INSERT_UPDATE)
     private String modifier;
 
     /**

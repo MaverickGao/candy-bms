@@ -6,6 +6,7 @@ import com.gzh.candy_bms.common.base.BaseModel;
 import lombok.*;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * 体征指标记录表 DO
@@ -39,73 +40,73 @@ public class PhysicalDataIndexRecordDO extends BaseModel implements Serializable
      * 身高（CM）
      */
     @TableField("height")
-    private String height;
+    private BigDecimal height;
     
     /**
      * 体重（KG）
      */
     @TableField("weight")
-    private String weight;
+    private BigDecimal weight;
 
     /**
      * 体脂率（%）
      */
     @TableField("body_fat")
-    private String bodyFat;
+    private BigDecimal bodyFat;
 
     /**
      * 肌肉率（%）
      */
     @TableField("muscle_rate")
-    private String muscleRate;
+    private BigDecimal muscleRate;
 
     /**
      * 内脏脂肪指数
      */
     @TableField("visceral_fat_index")
-    private String visceralFatIndex;
+    private BigDecimal visceralFatIndex;
 
     /**
      * 基础代谢率（kcal）
      */
     @TableField("bmr")
-    private String bmr;
+    private BigDecimal bmr;
 
     /**
      * 水分（%）
      */
     @TableField("body_water")
-    private String bodyWater;
+    private BigDecimal bodyWater;
 
     /**
      * 蛋白质（%）
      */
     @TableField("protein")
-    private String protein;
+    private BigDecimal protein;
 
     /**
      * 骨量（KG）
      */
     @TableField("bone_mass")
-    private String boneMass;
+    private BigDecimal boneMass;
 
     /**
      * 储肌能力等级
      */
     @TableField("muscle_resilience_level")
-    private String muscleResilienceLevel;
+    private BigDecimal muscleResilienceLevel;
 
     /**
      * 身体质量指数
      */
     @TableField("bmi")
-    private String bmi;
+    private BigDecimal bmi;
 
     /**
      * 身体年龄
      */
     @TableField("physical_age")
-    private String physicalAge;
+    private BigDecimal physicalAge;
 
     /**
      * 身体类型：

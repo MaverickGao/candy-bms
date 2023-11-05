@@ -19,9 +19,9 @@ create table physical_data_index_record (
     `protein` decimal(3,2) NOT NULL comment '蛋白质（%）',
     `bone_mass` decimal(3,2) NOT NULL comment '骨量（KG）',
     `muscle_resilience_level` decimal(3,2) NOT NULL comment '储肌能力等级',
-    `bmi` decimal(3,2) NOT NULL comment '身体质量指数',
-    `physical_age` decimal(3,2) NOT NULL comment '身体年龄',
-    `physical_type` char(1) NOT NULL comment '身体类型：0-偏瘦型；1-偏瘦肌肉型；2-肌肉发达型；3-缺乏锻炼型；4-标准型；5-标准肌肉型；6-隐胖型；7-偏胖型；8-肌肉型偏胖',
+    `bmi` decimal(3,2) NULL comment '身体质量指数',
+    `physical_age` decimal(3,2) NULL comment '身体年龄',
+    `physical_type` char(1) NULL comment '身体类型：0-偏瘦型；1-偏瘦肌肉型；2-肌肉发达型；3-缺乏锻炼型；4-标准型；5-标准肌肉型；6-隐胖型；7-偏胖型；8-肌肉型偏胖',
     PRIMARY KEY(`id`)
 ) COMMENT = '体征指标记录表';
 

@@ -1,11 +1,7 @@
 package com.gzh.candy_bms.common.convert;
 
-import com.gzh.candy_bms.pojo.request.InsertBalanceSheetRecordRequest;
-import com.gzh.candy_bms.pojo.request.InsertGeneralTypeRequest;
-import com.gzh.candy_bms.pojo.request.InsertSubsidiaryTypeRequest;
-import com.gzh.candy_bms.record.bean.bo.BalanceSheetGeneralTypeBO;
-import com.gzh.candy_bms.record.bean.bo.BalanceSheetSubsidiaryTypeBO;
-import com.gzh.candy_bms.record.bean.bo.InsertBalanceSheetRecordBO;
+import com.gzh.candy_bms.pojo.request.*;
+import com.gzh.candy_bms.record.bean.bo.*;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -42,4 +38,20 @@ public interface Request2BOConvert {
      * @return {@link InsertBalanceSheetRecordBO}
      */
     InsertBalanceSheetRecordBO insertBalanceSheetRecordRequest2BO(InsertBalanceSheetRecordRequest request);
+
+    /**
+     * InsertPhysicalIndexRecord Request 转 BO
+     *
+     * @param request {@link InsertPhysicalIndexRecordRequest}
+     * @return {@link InsertPhysicalIndexRecordBO}
+     */
+    InsertPhysicalIndexRecordBO insertPhysicalIndexRecordRequest2BO(InsertPhysicalIndexRecordRequest request);
+
+    /**
+     * InsertBodyGirthIndexRecord Request 转 BO
+     *
+     * @param request {@link InsertBodyGirthIndexRecordRequest}
+     * @return {@link InsertBodyGirthIndexRecordBO}
+     */
+    InsertBodyGirthIndexRecordBO insertBodyGirthIndexRecordRequest2BO(InsertBodyGirthIndexRecordRequest request);
 }
