@@ -5,17 +5,19 @@ import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * 支出评价；
- * 0-好支出；1-坏支出；2-必须支出
+ * 收支细分标志；
+ * 0-固定收入；1-额外收入；2-固定支出；3-额外支出
  *
  * @author gaozhiheng
  */
 @Getter
 @AllArgsConstructor
-public enum ExpensesEvaluationEnum {
-    GOOD_EXPENSES("0", "好支出"),
-    BAD_EXPENSES("1", "坏支出"),
-    MUST_EXPENSES("2", "必须支出");
+public enum SubsidiaryBalanceTypeEnum {
+
+    FIXED_REVENUES("0", "固定收入"),
+    EXTRA_REVENUES("1", "额外收入"),
+    FIXED_EXPENSES("2", "固定支出"),
+    EXTRA_EXPENSES("3", "额外支出");
 
     /**
      * 枚举值
@@ -34,9 +36,9 @@ public enum ExpensesEvaluationEnum {
      * @return name
      */
     public static String getNameByCode(String code) {
-        for (ExpensesEvaluationEnum expensesEvaluationEnum : ExpensesEvaluationEnum.values()) {
-            if (StringUtils.equals(expensesEvaluationEnum.getCode(), code)) {
-                return expensesEvaluationEnum.getDesc();
+        for (SubsidiaryBalanceTypeEnum subsidiaryBalanceTypeEnum : SubsidiaryBalanceTypeEnum.values()) {
+            if (StringUtils.equals(subsidiaryBalanceTypeEnum.getCode(), code)) {
+                return subsidiaryBalanceTypeEnum.getDesc();
             }
         }
         return null;

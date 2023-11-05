@@ -45,7 +45,17 @@ public enum ReturnCode implements ReturnCodeAndMsg {
     /**
      * 新增收支总类别数据失败
      */
-    INSERT_GENERAL_TYPE_ERROR("40010001", "新增收支总类别数据失败")
+    INSERT_GENERAL_TYPE_ERROR("40010001", "新增收支总类别数据失败"),
+
+    /**
+     * 新增收支细分类别数据失败
+     */
+    INSERT_SUBSIDIARY_TYPE_ERROR("40010002", "新增收支细分类别数据失败"),
+
+    /**
+     * 删除的收支记录表数据不存在
+     */
+    DELETE_BALANCE_SHEET_RECORD_ERROR("40010003", "删除的收支记录表数据不存在"),
     ;
 
     private final String code;

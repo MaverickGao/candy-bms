@@ -124,6 +124,11 @@
             <artifactId>commons-collections4</artifactId>
             <version>${commons.collection4.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>21.0</version>
+        </dependency>
 
         <!-- xxl-job -->
         <dependency>
