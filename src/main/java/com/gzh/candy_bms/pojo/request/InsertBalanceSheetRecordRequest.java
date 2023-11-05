@@ -68,7 +68,6 @@ public class InsertBalanceSheetRecordRequest implements Serializable {
     /**
      * 支出评价；0-好支出；1-坏支出；2-必须支出
      */
-    @NotBlank(message = "请选择支出评价")
     private String expensesEvaluation;
 
     /**
